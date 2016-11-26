@@ -1,0 +1,4 @@
+grant codeBase "file:/Users/chris/x/pij21/src" {
+	permission java.security.AllPermission;
+	permission java.security.SocketPermission "*:1024-", "accept, resolve";
+};
