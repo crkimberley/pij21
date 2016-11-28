@@ -13,7 +13,6 @@ public class EchoServerLauncher {
             System.setSecurityManager(new SecurityManager());
         }
         try {
-            //System.setProperty("java.rmi.server.hostname","192.168.1.65");
             //create the registry if there is not one
             Registry registry = LocateRegistry.getRegistry();
 
@@ -22,7 +21,6 @@ public class EchoServerLauncher {
 
             //register (bind) the server object on the registry
             //The registry may be on a different machine
-
             registry.rebind("Echo", server);
         } catch (RemoteException ex) {
             ex.printStackTrace();
