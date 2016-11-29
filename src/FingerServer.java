@@ -14,11 +14,10 @@ public class FingerServer extends UnicastRemoteObject implements FingerService {
 
     @Override
     public String connectedUsers() throws RemoteException {
-        String newLine = System.getProperty("line.separator");
-        String result = newLine + "\t ••• Connected Users •••" + newLine;
+        String result = "\n\t ••• Connected Users •••\n";
         for (User user : users) {
             if (user.isConnected()) {
-                result+= user.getName() + " connected to server at " + user.getConnectTime() + newLine;
+                result+= user.getName() + " connected to server at " + user.getConnectTime() + "\n";
             }
         }
         return result;

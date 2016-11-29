@@ -15,7 +15,7 @@ public class LoginClientLauncher {
     private void launch() {
         try {
             LoginService loginService = (LoginService) Naming.lookup("login");
-            System.out.print(System.getProperty("line.separator"));
+            System.out.println();
             System.out.println("claire logging in: " + loginService.logIn("claire", "clairePassword"));
             System.out.println("amy logging in: " + loginService.logIn("amy", "amyPassword"));
             System.out.println("beth logging in: " + loginService.logIn("beth", "bethPassword"));
@@ -24,7 +24,7 @@ public class LoginClientLauncher {
             System.out.println("ella logging in " + loginService.logIn("ella", "wrongPassword"));
             System.out.println("demi logging in " + loginService.logIn("demi", "demiPassword"));
             System.out.println("ella logging in " + loginService.logIn("ella", "ellaPassword"));
-            System.out.print(System.getProperty("line.separator"));
+            System.out.println();
         } catch (NotBoundException | MalformedURLException | RemoteException e) {
             e.printStackTrace();
         }
