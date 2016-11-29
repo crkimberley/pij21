@@ -5,9 +5,9 @@ import java.rmi.registry.Registry;
 /**
  * @author crkimberley on 28/11/2016.
  */
-public class DateServerLauncher {
+public class TimeServerLauncher {
     public static void main(String[] args) {
-        new DateServerLauncher().launch();
+        new TimeServerLauncher().launch();
     }
 
     private void launch() {
@@ -15,13 +15,9 @@ public class DateServerLauncher {
             System.setSecurityManager(new SecurityManager());
         }
         try {
-            // LocateRegistry.createRegistry(1099); (KEITH)
             Registry registry = LocateRegistry.getRegistry();
-            DateServer dateServer = new DateServer();
-            // String registryHost = "//localhost/"; (KEITH)
-            // String serviceName = "date"; (KEITH)
-            // Naming.rebind(registryHost + serviceName, server); (KEITH)
-            registry.rebind("Date", dateServer);
+            TimeService server = new TimeServer();
+            registry.rebind("Date", server);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
