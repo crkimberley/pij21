@@ -1,3 +1,3 @@
-grant codeBase "file:/Users/chris/x/pij21/out/production/pij21/" {
+grant {
 	permission java.security.AllPermission;
 };
