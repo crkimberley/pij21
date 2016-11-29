@@ -13,9 +13,6 @@ public class CalculatorServerLauncher {
     }
 
     private void launch() {
-        if (System.getSecurityManager() == null) {
-            System.setSecurityManager(new SecurityManager());
-        }
         try {
             CalculatorServer server = new CalculatorServer();
             LocateRegistry.getRegistry().rebind("calculator", server);

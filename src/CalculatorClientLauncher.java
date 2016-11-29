@@ -10,9 +10,6 @@ public class CalculatorClientLauncher {
     }
 
     private void launch() {
-        if (System.getSecurityManager() == null) {
-            System.setSecurityManager(new SecurityManager());
-        }
         try {
             CalculatorService calculatorService = (CalculatorService) Naming.lookup("calculator");
             System.out.println("13 + 29 = " + calculatorService.add(13, 29));
